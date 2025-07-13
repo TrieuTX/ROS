@@ -10,7 +10,7 @@ public:
     SimplePubliser() : Node("simple_publiser"), m_counter(0)
     {
         // keep maximum 10 messages in queue if sub can't process in time
-        m_pub = create_publisher<std_msgs::msg::String>("chatter", 10);
+        m_pub = create_publisher<std_msgs::msg::String>("simple_publiser_send", 10);
         m_timer = create_wall_timer(1000ms, std::bind(&SimplePubliser::timerCallback, this));
         RCLCPP_INFO(get_logger(), "Publishing at 1 Hz");
     }

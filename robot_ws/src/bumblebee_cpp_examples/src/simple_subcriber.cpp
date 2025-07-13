@@ -8,7 +8,7 @@ class SimpleSubcriber : public rclcpp::Node
 public:
     SimpleSubcriber() : Node("simple_subcriber")
     {
-        m_sub = create_subscription<std_msgs::msg::String>("chatter", 10, std::bind(&SimpleSubcriber::msgCallback, this, _1));
+        m_sub = create_subscription<std_msgs::msg::String>("simple_publiser_send", 10, std::bind(&SimpleSubcriber::msgCallback, this, _1));
     }
 
 private:
